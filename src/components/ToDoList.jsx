@@ -1,3 +1,6 @@
+import React, { useState } from 'react';
+import TodoItem from './TodoItem'
+ 
 function TodoList() {
     const [tasks, setTasks] = useState([
     {
@@ -19,7 +22,7 @@ function addTask(text) {
     text,
     completed: false
     };
-    setTasks([…tasks, newTask]);
+    setTasks([...tasks, newTask]);
     setText('');
 }
 function deleteTask(id) {
@@ -28,7 +31,7 @@ function deleteTask(id) {
 function toggleCompleted(id) {
     setTasks(tasks.map(task => {
     if (task.id === id) {
-        return {…task, completed: !task.completed};
+        return {...task, completed: !task.completed};
     } else {
         return task;
     } 
